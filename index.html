@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zlata Petrova — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,600;1,300&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#faf8f5;color:#1a1816;min-height:100vh}
+
+.hero{background:#fff;border-bottom:1px solid #ede9e2;padding:48px 0 40px}
+.hero-inner{max-width:1020px;margin:0 auto;padding:0 40px}
+.hero-top{display:flex;align-items:flex-start;gap:32px;margin-bottom:20px}
+.avatar {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background-image: url("c6e3b3b5-0ae1-48ec-bb81-52b572928f53.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    border: 2px solid #FAC775;
+}
+.hero-name{font-family:'Fraunces',serif;font-size:52px;font-weight:600;color:#1a1816;letter-spacing:-1.5px;line-height:1}
+.hero-role{margin-top:8px;font-size:13px;font-weight:300;letter-spacing:3px;text-transform:uppercase;color:#888780}
+.about{font-size:14px;line-height:1.75;color:#5F5E5A;max-width:640px;margin-bottom:24px;padding:16px 20px;background:#faf8f5;border-left:3px solid #FAC775;border-radius:0 8px 8px 0}
+.contact-row{display:flex;flex-wrap:wrap;gap:10px}
+.cpill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:#5F5E5A;background:#faf8f5;border:1px solid #D3D1C7;border-radius:999px;padding:5px 14px;text-decoration:none;transition:all .2s}
+.cpill:hover{background:#FAEEDA;border-color:#FAC775;color:#633806}
+.cpill i{font-size:14px}
+
+.body{max-width:1020px;margin:0 auto;padding:48px 40px;display:grid;grid-template-columns:1fr 300px;gap:48px;align-items:start}
+
+.slabel{font-size:10.5px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:#BA7517;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.slabel::after{content:'';flex:1;height:1px;background:#FAC775;opacity:.5}
+
+.section{margin-bottom:44px}
+
+.job{padding-left:22px;margin-bottom:28px;position:relative}
+.job::before{content:'';position:absolute;left:0;top:10px;bottom:-20px;width:1px;background:#ede9e2}
+.job:last-child::before{display:none}
+.jdot{position:absolute;left:-4px;top:9px;width:9px;height:9px;border-radius:50%;background:#EF9F27;border:2px solid #fff}
+.job-current .jdot{background:#D4537E;border-color:#F4C0D1}
+.job-current .jdot::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1.5px solid #D4537E;opacity:.4}
+.jtitle{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:#1a1816}
+.jdate{font-size:11.5px;color:#B4B2A9;white-space:nowrap}
+.jrow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+.jco{font-size:12.5px;color:#BA7517;margin-bottom:6px}
+.job-current .jco{color:#993556}
+.jdesc{font-size:13px;line-height:1.75;color:#5F5E5A;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;padding:2px 9px;border-radius:4px;background:#F1EFE8;color:#5F5E5A;border:1px solid #D3D1C7}
+.cbadge{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#FBEAF0;color:#993556;border:1px solid #F4C0D1;border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:middle}
+
+.edu-card{border:1px solid #ede9e2;padding:14px 16px;margin-bottom:12px;background:#fff;border-left:3px solid #AFA9EC;border-radius:0 10px 10px 0}
+.edu-title{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:#1a1816;margin-bottom:2px}
+.edu-school{font-size:12.5px;color:#7F77DD;margin-bottom:2px}
+.edu-meta{font-size:11.5px;color:#B4B2A9}
+
+.skill-block{margin-bottom:18px}
+.skill-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.skill-name{font-size:13px;color:#2C2C2A;font-weight:400}
+.skill-pct{font-size:12px;color:#B4B2A9}
+.bar-bg{height:6px;background:#F1EFE8;border-radius:999px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px;background:#EF9F27;transform:scaleX(0);transform-origin:left;animation:grow 1s cubic-bezier(.16,1,.3,1) forwards}
+.bar-fill.purple{background:#7F77DD}
+.bar-fill.pink{background:#D4537E}
+.bar-fill.teal{background:#1D9E75}
+.bar-fill.coral{background:#D85A30}
+@keyframes grow{to{transform:scaleX(1)}}
+
+.scard{background:#fff;border:1px solid #ede9e2;border-radius:12px;padding:20px;margin-bottom:20px}
+.lang-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #F1EFE8}
+.lang-row:last-child{border-bottom:none}
+.lang-n{font-size:13.5px;color:#1a1816}
+.lbadge{font-size:11.5px;padding:3px 11px;border-radius:999px;font-weight:500}
+.l-nat{background:#FAEEDA;color:#633806}
+.l-c1{background:#EEEDFE;color:#3C3489}
+.l-b2{background:#E6F1FB;color:#0C447C}
+.cert-row{padding:9px 0;border-bottom:1px solid #F1EFE8}
+.cert-row:last-child{border-bottom:none}
+.cert-name{font-size:12.5px;color:#2C2C2A;line-height:1.4;margin-bottom:2px}
+.cert-meta{font-size:11px;color:#B4B2A9;display:flex;justify-content:space-between}
+.evt-row{padding:9px 0;border-bottom:1px solid #F1EFE8}
+.evt-row:last-child{border-bottom:none}
+.evt-name{font-size:13px;color:#2C2C2A;margin-bottom:1px}
+.evt-meta{font-size:11.5px;color:#B4B2A9}
+
+@media(max-width:680px){
+.body{grid-template-columns:1fr;padding:28px 20px}
+.hero-inner{padding:0 24px}
+.hero-name{font-size:36px}
+.hero-top{flex-direction:column;gap:16px}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="avatar"></div>
+      <div>
+        <h1 class="hero-name">Zlata Petrova</h1>
+        <p class="hero-role">Digitaalturundus &nbsp;·&nbsp; Sotsiaalmeedia &nbsp;·&nbsp; Visuaaldisain</p>
+      </div>
+    </div>
+    <p class="about">Olen loominguline spetsialist Tallinnast, kelle taust hõlmab visuaaldisaini, 3D-kunsti ja digitaalturundust. Kõige rohkem meeldib mulle töötada sotsiaalmeediaga — luua sisu, planeerida postitusi ja aidata brändil internetis nähtavaks saada. Õpin kiiresti uusi tööriistu ja kohanen hästi erinevate töökeskkondadega. Vabal ajal jälgin, mis toimub disaini ja digikultuurimaailmas.</p>
+    <div class="contact-row">
+      <a class="cpill" href="mailto:dova8989@gmail.com"><i class="ti ti-mail" aria-hidden="true"></i>dova8989@gmail.com</a>
+      <a class="cpill" href="tel:+37258093051"><i class="ti ti-phone" aria-hidden="true"></i>+372 5809 3051</a>
+      <a class="cpill" href="https://www.linkedin.com/in/zlata-petrova-602742220/"><i class="ti ti-brand-linkedin" aria-hidden="true"></i>LinkedIn</a>
+      <a class="cpill" href="https://www.behance.net/dovk"><i class="ti ti-brand-behance" aria-hidden="true"></i>Behance</a>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+  <div>
+    <div class="section">
+      <div class="slabel">Töökogemus</div>
+
+      <div class="job job-current">
+        <div class="jdot"></div>
+        <div class="jrow">
+          <div class="jtitle">Turundusspetsialist <span class="cbadge">Praegune</span></div>
+          <div class="jdate">märts 2026 — praeguseni</div>
+        </div>
+        <div class="jco">Kristoffer Kaubandus OÜ · Flambrex</div>
+        <p class="jdesc">Loon ja haldan sotsiaalmeedia sisu, et suurendada brändi nähtavust ja kaasata kliente. Tegelen sisu planeerimise, tekstide kirjutamise ja kogukonna haldamisega. Tulevikus osalen ka turunduskampaaniate ja reklaamide loomisel.</p>
+        <div class="tags"><span class="tag">Sotsiaalmeedia</span><span class="tag">Turundus</span><span class="tag">Sisuloome</span></div>
+      </div>
+
+      <div class="job">
+        <div class="jdot"></div>
+        <div class="jrow">
+          <div class="jtitle">Trükiste järeltöötleja</div>
+          <div class="jdate">nov 2025 — jaan 2026</div>
+        </div>
+        <div class="jco">K-PRINT OÜ</div>
+        <div class="tags"><span class="tag">Trükitootmine</span><span class="tag">Kvaliteedikontroll</span></div>
+      </div>
+
+      <div class="job">
+        <div class="jdot"></div>
+        <div class="jrow">
+          <div class="jtitle">Sotsiaalmeedia spetsialist</div>
+          <div class="jdate">märts 2024 — sept 2025</div>
+        </div>
+        <div class="jco">Homerich Import OÜ</div>
+        <p class="jdesc">Tegin brändile sotsiaalmeedia sisu, sealhulgas pilte, videoid ja postitusi. Aitasin klientidel küsimustele vastata sõnumite ja telefoni teel.</p>
+        <div class="tags"><span class="tag">Sisuloome</span><span class="tag">SMM</span><span class="tag">Klienditugi</span></div>
+      </div>
+
+      <div class="job">
+        <div class="jdot"></div>
+        <div class="jrow">
+          <div class="jtitle">Laotöötaja · Müügikonsultant</div>
+          <div class="jdate">märts 2023 — märts 2024</div>
+        </div>
+        <div class="jco">Apranga Estonia OÜ</div>
+        <div class="tags"><span class="tag">Klienditugi</span><span class="tag">Laohaldus</span></div>
+      </div>
+
+      <div class="job">
+        <div class="jdot"></div>
+        <div class="jrow">
+          <div class="jtitle">Toitlustustöötaja</div>
+          <div class="jdate">okt 2020 — sept 2022</div>
+        </div>
+        <div class="jco">APL Fresh Food OÜ</div>
+        <div class="tags"><span class="tag">Klienditugi</span><span class="tag">Meeskonnatöö</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="slabel">Haridus</div>
+      <div class="edu-card">
+        <div class="edu-title">3D-kunstnik-disainer</div>
+        <div class="edu-school">Tartu Kunstikool</div>
+        <div class="edu-meta">sept 2017 — veebr 2022 · Keskeriharidus</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-title">3D-kunstniku praktiline kursus</div>
+        <div class="edu-school">Ringtail Studios Estonia OÜ</div>
+        <div class="edu-meta">aug — sept 2022 · 245 tundi</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-title">3D-kunstniku praktika</div>
+        <div class="edu-school">Sign Narva OÜ</div>
+        <div class="edu-meta">okt — dets 2021 · 80 tundi</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="slabel">Oskused</div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">Graafiline disain & UI/UX (Figma, Photoshop, Illustrator)</span><span class="skill-pct">90%</span></div>
+        <div class="bar-bg"><div class="bar-fill purple" style="width:90%;animation-delay:.1s"></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">SMM & sisuturundus</span><span class="skill-pct">88%</span></div>
+        <div class="bar-bg"><div class="bar-fill pink" style="width:88%;animation-delay:.2s"></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">3D modelleerimine & tekstureerimine (Blender, Substance, ZBrush)</span><span class="skill-pct">82%</span></div>
+        <div class="bar-bg"><div class="bar-fill teal" style="width:82%;animation-delay:.3s"></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">Veebiarendus (HTML5, CSS, JS, PHP, MySQL)</span><span class="skill-pct">65%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width:65%;animation-delay:.4s"></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">Kliendikommunikatsioon & tugi</span><span class="skill-pct">95%</span></div>
+        <div class="bar-bg"><div class="bar-fill coral" style="width:95%;animation-delay:.5s"></div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-head"><span class="skill-name">Agile & projektijuhtimine</span><span class="skill-pct">70%</span></div>
+        <div class="bar-bg"><div class="bar-fill purple" style="width:70%;animation-delay:.6s"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="scard">
+      <div class="slabel" style="margin-bottom:14px">Keeled</div>
+      <div class="lang-row"><span class="lang-n">Vene keel</span><span class="lbadge l-nat">Emakeel</span></div>
+      <div class="lang-row"><span class="lang-n">Eesti keel</span><span class="lbadge l-c1">C1</span></div>
+      <div class="lang-row"><span class="lang-n">Inglise keel</span><span class="lbadge l-b2">B2</span></div>
+    </div>
+
+    <div class="scard">
+      <div class="slabel" style="margin-bottom:14px">Üritused</div>
+      <div class="evt-row">
+        <div class="evt-name">AI assistendid sinu turundustiimis — veebiseminar</div>
+        <div class="evt-meta">Tallinn · 2026</div>
+      </div>
+      <div class="evt-row">
+        <div class="evt-name">SEO ja AI veebiseminar</div>
+        <div class="evt-meta">Tallinn · 2026</div>
+      </div>
+      <div class="evt-row">
+        <div class="evt-name">Sotsiaalmeedia konverents 2026</div>
+        <div class="evt-meta">Tallinn · 2026</div>
+      </div>
+    </div>
+
+    <div class="scard">
+      <div class="slabel" style="margin-bottom:14px">Kursused & sertifikaadid</div>
+      <div class="cert-row">
+        <div class="cert-name">Figma tööriistad UI/UX loomiseks</div>
+        <div class="cert-meta"><span>Tallinna Tehnikakõrgkool</span><span>30h · 2025</span></div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Naised veebiarendajaks!</div>
+        <div class="cert-meta"><span>BCS Koolitus AS</span><span>192h · 2024</span></div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Sotsiaalmeedia turunduse kursus</div>
+        <div class="cert-meta"><span>Tallinna Teeninduskool</span><span>50h · 2024</span></div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">3D animatsiooni algkursus</div>
+        <div class="cert-meta"><span>Ringtail Studios Estonia OÜ</span><span>35h · 2022</span></div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-name">Tekstureerimise edasijõudnute kursus</div>
+        <div class="cert-meta"><span>Ringtail Studios Estonia OÜ</span><span>50h · 2022</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
